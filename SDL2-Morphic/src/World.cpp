@@ -72,9 +72,8 @@ bool World::init() {
 }
 
 void World::prepareSchene() {
-    SDL_SetRenderDrawColor(renderer_, background_color.red,
-                           background_color.green, background_color.blue,
-                           background_color.alpha);
+    SDL_SetRenderDrawColor(renderer_,
+                           background_color.r, background_color.g, background_color.b, background_color.a);
     SDL_RenderClear(renderer_);
 }
 

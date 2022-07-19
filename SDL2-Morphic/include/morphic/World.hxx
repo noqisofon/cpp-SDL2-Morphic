@@ -5,9 +5,9 @@
 #include <memory>
 #include <vector>
 
-#include "./Color.hxx"
-#include "./Morph.hxx"
-#include "./Rect.hxx"
+#include "./morphic/Color.hxx"
+#include "./morphic/Morph.hxx"
+#include "./morphic/Rect.hxx"
 
 namespace morphic {
 class Morph;
