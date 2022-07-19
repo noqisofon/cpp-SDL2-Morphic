@@ -22,6 +22,7 @@ struct Color {
     static Color red();
     static Color green();
     static Color blue();
+    static Color yellow();
 
     friend std::ostream &operator<<(std::ostream &os, const Color &a_color);
 
