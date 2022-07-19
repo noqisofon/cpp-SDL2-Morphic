@@ -19,14 +19,15 @@ struct Rect {
     Point center() const;
 
     int32_t left() const;
-    
-    Point leftTop() const;
 
     Point leftCenter() const;
 
     int32_t right() const;
 
     int32_t top() const;
+    
+    Point   topLeft() const;
+    Point   topRight() const;
 
     friend std::ostream &operator<<(std::ostream &os, const Rect &a_rect);
 

@@ -16,19 +16,19 @@ void Circle::display(SDL_Renderer *renderer) {
     SDL_Rect clip = {bounds.x, bounds.y, static_cast<int32_t>(bounds.width),
                      static_cast<int32_t>(bounds.height)};
 
-    // 縁を描画します。
-    ::SDL_SetRenderDrawColor( renderer, edgeColor.red, edgeColor.green, edgeColor.blue, edgeColor.alpha );
-    ::SDL_RenderDrawRect( renderer, &clip );
-
     // 前景を描画します。
-    ::SDL_SetRenderDrawColor(renderer, foregroundColor.red,
-                             foregroundColor.green, foregroundColor.blue,
-                             foregroundColor.alpha);
+    ::SDL_SetRenderDrawColor(renderer,
+                             foregroundColor.red, foregroundColor.green, foregroundColor.blue, foregroundColor.alpha);
     SDL_RenderFillRect(renderer, &clip);
+
+    // 縁を描画します。
+    ::SDL_SetRenderDrawColor( renderer,
+                              edgeColor.red, edgeColor.green, edgeColor.blue, edgeColor.alpha );
+    ::SDL_RenderDrawRect( renderer, &clip );
 }
 
 std::ostream &operator<<(std::ostream &os, const Circle &a_circle) {
-    os << "Circle(" << a_circle.bounds.leftTop() << ", " << a_circle.radius
+    os << "Circle(" << a_circle.bounds.topLeft() << ", " << a_circle.radius
        << ")";
 
     return os;

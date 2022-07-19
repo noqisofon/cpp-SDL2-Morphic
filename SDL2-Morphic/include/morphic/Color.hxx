@@ -11,19 +11,23 @@ struct Color {
     Color(Color &other);
 
     constexpr Color &operator=(const Color &other) {
-        red = other.red;
-        green = other.green;
-        blue = other.blue;
-        alpha = other.alpha;
+        r = other.r;
+        g = other.g;
+        b = other.b;
+        a = other.a;
 
         return *this;
     }
 
+    static Color red();
+    static Color green();
+    static Color blue();
+
     friend std::ostream &operator<<(std::ostream &os, const Color &a_color);
 
-    uint8_t red;
-    uint8_t green;
-    uint8_t blue;
-    uint8_t alpha;
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+    uint8_t a;
 };
 } // namespace morphic

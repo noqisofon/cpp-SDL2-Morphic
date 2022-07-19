@@ -17,13 +17,15 @@ namespace morphic {
 
     int32_t Rect::left() const { return x; }
 
-    Point Rect::leftTop() const { return {x, y}; }
-
     Point Rect::leftCenter() const { return {left(), bottom() / 2}; }
 
     int32_t Rect::right() const { return static_cast<int32_t>(x + width); }
 
     int32_t Rect::top() const { return y; }
+
+    Point Rect::topLeft() const { return {x, y}; }
+
+    Point Rect::topRight() const { return { right(), y }; }
 
     std::ostream &operator<<(std::ostream &os, const Rect &a_rect) {
         os << "Rect(" << a_rect.x << ", " << a_rect.y << ", " << a_rect.width

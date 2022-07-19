@@ -2,19 +2,26 @@
 
 namespace morphic {
 
-    Color::Color() : red(0), green(0), blue(0), alpha(0) {}
-    Color::Color(uint8_t r, uint8_t g, uint8_t b)
-        : red(r), green(g), blue(b), alpha(255) {}
-    Color::Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
-        : red(r), green(g), blue(b), alpha(a) {}
+    Color::Color()
+        : r(0), g(0), b(0), a(0) {}
+    Color::Color(uint8_t _r, uint8_t _g, uint8_t _b)
+        : r(_r), g(_g), b(_b), a(255) {}
+    Color::Color(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a)
+        : r(_r), g(_g), b(_b), a(_a) {}
 
     Color::Color(Color &other)
-        : red(other.red), green(other.green), blue(other.blue), alpha(other.alpha) {
+        : r(other.r), g(other.g), b(other.b), a(other.a) {
     }
 
+    Color Color::red()   { return { 0x80, 0x00, 0x00 }; }
+
+    Color Color::green() { return { 0x00, 0x80, 0x00 }; }
+
+    Color Color::blue()  { return { 0x00, 0x00, 0x80 }; }
+
     std::ostream &operator<<(std::ostream &os, const Color &a_color) {
-        os << "rgba(" << (uint32_t)a_color.red << ", " << (uint32_t)a_color.green
-           << ", " << (uint32_t)a_color.blue << ", " << (uint32_t)a_color.alpha
+        os << "rgba(" << (uint32_t)a_color.r << ", " << (uint32_t)a_color.g
+           << ", " << (uint32_t)a_color.b << ", " << (uint32_t)a_color.a
            << ")";
 
         return os;

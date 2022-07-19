@@ -14,10 +14,7 @@ class Morph {
     virtual void display(SDL_Renderer *renderer) = 0;
 
     Point location() const { return { bounds.x, bounds.y }; }
-    void  location(int32_t x, int32_t y) {
-        bounds.x = x;
-        bounds.y = y;
-    }
+    void  location(int32_t x, int32_t y);
 
   public:
     Color foregroundColor;
