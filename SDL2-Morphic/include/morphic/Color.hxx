@@ -3,32 +3,37 @@
 #include <iostream>
 
 namespace morphic {
-struct Color {
-    Color();
-    Color(uint8_t r, uint8_t g, uint8_t b);
-    Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+    class Color {
+        using _Self = Color;
 
-    Color(Color &other);
+    public:
+        Color();
+        Color(uint8_t r, uint8_t g, uint8_t b);
+        Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 
-    constexpr Color &operator=(const Color &other) {
-        r = other.r;
-        g = other.g;
-        b = other.b;
-        a = other.a;
+        Color(Color &other);
 
-        return *this;
-    }
+        constexpr Color &operator=(const Color &other) {
+            r = other.r;
+            g = other.g;
+            b = other.b;
+            a = other.a;
 
-    static Color red();
-    static Color green();
-    static Color blue();
-    static Color yellow();
+            return *this;
+        }
 
-    friend std::ostream &operator<<(std::ostream &os, const Color &a_color);
+        static Color red();
+        static Color green();
+        static Color blue();
+        static Color yellow();
+        static Color black();
+        static Color white();
 
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-    uint8_t a;
-};
+        friend std::ostream &operator<<(std::ostream &os, const Color &a_color);
+
+        uint8_t r;
+        uint8_t g;
+        uint8_t b;
+        uint8_t a;
+    };
 } // namespace morphic

@@ -393,3 +393,6 @@ MigrationBackup/
 
 # VSCode Settings directory
 .vscode/
+
+# WinMerge backup file
+*.bak
